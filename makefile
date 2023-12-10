@@ -3,4 +3,4 @@ all : run
 run : comp
 	./main
 comp :
-	gcc func.c Funcs16.c Funcs2.c Funcs8.c main.c -o main
+	gcc func.c Funcs16.c Funcs2.c Funcs8.c check_base.c main.c -o main

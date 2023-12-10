@@ -4,11 +4,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-typedef struct{
-    int a;
-    int b;
-} chisla;
-chisla ox_to_int(char* a, char*b);
+int ox(const char *a);
 void printOx(int a);
 
 #endif

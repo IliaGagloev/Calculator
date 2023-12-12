@@ -7,7 +7,7 @@
 
 int bin(const char *a){
     int res = 0;
-    for(int i = 0;i < strlen(a);i++){
+    for(int i = 0;i < strlen(a) - 1;i++){
         res <<= 1;
         res += a[i] - '0';
     }

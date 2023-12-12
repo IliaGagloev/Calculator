@@ -5,7 +5,7 @@
 #include"Funcs16.h"
 int ox(const char *a){
     int res = 0;
-    for(int i = 0;i < strlen(a);i++){
+    for(int i = 2;i < strlen(a) - 1;i++){
         if(isdigit(a[i])){
             res <<= 4;
             res += a[i] - '0';
@@ -13,6 +13,7 @@ int ox(const char *a){
             res <<= 4;
             res += (a[i] - '0') - 7;
         }
+        printf("%d ", res);
     }
     printf("%d\n", res);
     return res;

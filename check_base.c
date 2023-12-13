@@ -7,7 +7,7 @@ int base(const char* a){
     if(a[0] == '0' && a[1] == 'x') 
         base = 16;
     else if(a[0] == '0')
-        base == 8;
+        base = 8;
     else
         base = 2;
     return base;

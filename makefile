@@ -1,6 +1,11 @@
+cc = gcc
+isp = main
+
 all : run
-	rm main
+	rm isp
 run : comp
-	./main
+	./isp
 comp :
-	gcc func.c Funcs16.c Funcs2.c Funcs8.c check_base.c main.c -o main
+	cc func.c Funcs16.c Funcs2.c Funcs8.c check_base.c main.c -o isp
+mem: comp
+	valgrind --track-origins=yes ./isp 

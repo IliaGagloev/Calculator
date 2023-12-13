@@ -7,7 +7,7 @@
 
 int o(const char *a){
     int res = 0;
-    for(int i = 1;i < strlen(a) - 1;i++){
+    for(int i = 1;i < strlen(a);i++){
         res <<= 3;
         res += a[i] - '0';
     }
@@ -20,5 +20,5 @@ void printO(int a){
         printf("-");
         a = abs(a);
     }
-    printf("0x%o\n", a);
+    printf("0%o\n", a);
 }

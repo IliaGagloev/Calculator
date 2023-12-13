@@ -2,6 +2,6 @@
 #define FUNCS8_H
 
 int o(const char *a);
-void print8(int a);
+void printO(int a);
 
 #endif

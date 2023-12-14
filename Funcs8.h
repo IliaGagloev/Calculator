@@ -1,7 +1,7 @@
 #ifndef FUNCS8_H
 #define FUNCS8_H
 
-int o(const char *a);
+int o(const char *a,int* flag);
 void printO(int a);
 
 #endif

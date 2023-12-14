@@ -5,9 +5,13 @@
 #include"Funcs2.h"
 #include"func.h"
 
-int o(const char *a){
+int o(const char *a,int* flag ){
     int res = 0;
     for(int i = 1;i < strlen(a);i++){
+        if(a[i] - '0' >= 8){
+            *flag = 1;
+            return 0;
+        }
         res <<= 3;
         res += a[i] - '0';
     }
@@ -20,5 +24,6 @@ void printO(int a){
         printf("-");
         a = abs(a);
     }
-    printf("0%o\n", a);
+    printf("0%o (%d)\n", a, a);
+
 }

@@ -49,6 +49,7 @@ int obs(int a, int b, char op){
 }
 
 int lonely(int a){
-    printf("%d", ~a);
-    return ~a;
+    int b = ~a;
+    printf("%s\n", b);
+    return 0;
 }

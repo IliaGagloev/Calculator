@@ -20,9 +20,19 @@ int bin(const char *a, int* flag){
 
 
 void printBin(int a){
-    if(a < 0){
+    int a1 = a;
+    if(a1 < 0){
         printf("-");
-        a = abs(a);
+        a1 = abs(a);
     }
-    printf("0x%X\n", a);
+    int y = 1;
+    for (int j=sizeof(a1)-1; j>=0; j--){
+        if(y == 1 && ((a1>>j)&1) == 0)
+            continue;
+        y = 0;
+        printf("%u",(a1>>j)&1); 
+    }
+    if(a == 0) 
+        printf("0");
+    printf(" (%d)\n", a);
 }

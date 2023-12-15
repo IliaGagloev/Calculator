@@ -17,7 +17,7 @@ char* delete_spaces(char* a){
     return res;
 }
 
-int obs(int a, int b, char op){
+int obs(int a, int b, char op,int* flag){
     int res = 0;
     switch(op){
         case '+':
@@ -33,23 +33,35 @@ int obs(int a, int b, char op){
             res = a%b;
             break;
         case '&':
+            if(a < 0 || b < 0){
+                *flag = 1;
+                return 0;
+            }
             res = a&b;
             break;
         case '|':
+            if(a < 0 || b < 0){
+                *flag = 1;
+                return 0;
+            }
             res = a|b;
             break;
         case '^':
+            if(a < 0 || b < 0){
+                *flag = 1;
+                return 0;
+            }
             res = a^b;
             break;
         default:
             printf("i cant do this opperation yet");
+            *flag = 1;
     }
     return res;
 
 }
 
 int lonely(int a){
-    int b = ~a;
-    printf("%s\n", b);
-    return 0;
+    int res = ~a;
+    return res;
 }

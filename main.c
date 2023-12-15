@@ -42,11 +42,11 @@ void raz(char* vvod){
     if(op != '~')
         op = vvod[i];
     i++;
-    int k = i;
     if(vvod[i] == '-'){
         i++;
         znak_b = 1;
     }
+    int k = i;
     while((isdigit(vvod[i]) || isalpha(vvod[i])) && i < strlen(vvod))
         i++;
     b = (char*)calloc((i - k + 1), sizeof(char));;
@@ -89,7 +89,7 @@ int main(){
                 break;
         }
         if(zifr == 1){
-            printf("Error\n");
+            printf("Error. No such numbers in the base\n");
             free(a);
             free(b);
             free(vvod);
@@ -97,16 +97,16 @@ int main(){
         }
         if(znak_a == 1)
             a1 *= (-1);
-        lonely(a1);
+        int res = lonely(a1);
         switch(base){
             case 2:
-                printBin(a1);
+                printBin(res);
                 break;
             case 8:
-                printO(a1);
+                printO(res);
                 break;
             case 16:
-                printOx(a1);
+                printOx(res);
                 break;
         }
     }else{
@@ -134,7 +134,7 @@ int main(){
                 break;
         }
         if(zifr == 1){
-            printf("Error\n");
+            printf("Error. No such numbers in the base\n");
             free(a);
             free(b);
             free(vvod);
@@ -144,10 +144,17 @@ int main(){
             a1 *= (-1);
         if(znak_b == 1)
             b1 *= (-1);
-        res = obs(a1, b1, op);
+        res = obs(a1, b1, op, &zifr);
+        if(zifr == 1){
+            printf("Error. The numbers must be >= 0\n");
+            free(a);
+            free(b);
+            free(vvod);
+            return 0;
+        }
         switch(base){
             case 2:
-                printf("%d", res);
+                printBin(res);
                 break;
             case 8:
                 printO(res);

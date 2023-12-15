@@ -10,6 +10,6 @@ typedef struct{
 } chisla;
 
 char* delete_spaces(char* a);
-int obs(int a, int b,char op);
+int obs(int a, int b,char op, int* flag);
 int lonely(int a);
 #endif

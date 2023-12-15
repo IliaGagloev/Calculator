@@ -10,12 +10,12 @@ int ox(const char *a,int* flag){
             res <<= 4;
             res += a[i] - '0';
         }else{
-            if(a[i] - '0' - 7 > 15){
+            if(a[i] - '0' - 39 > 15 || a[i] - '0' - 39 < 10){
                 *flag = 1;
                 return 0;
             }
             res <<= 4;
-            res += (a[i] - '0') - 7;
+            res += (a[i] - '0') - 39;
         }
     }
     return res;

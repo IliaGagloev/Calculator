@@ -26,7 +26,7 @@ void printBin(int a){
         a1 = abs(a);
     }
     int y = 1;
-    for (int j=sizeof(a1)-1; j>=0; j--){
+    for (int j=sizeof(a1) * 8 -1; j>=0; j--){
         if(y == 1 && ((a1>>j)&1) == 0)
             continue;
         y = 0;

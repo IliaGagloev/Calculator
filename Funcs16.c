@@ -1,5 +1,3 @@
-#include<stdio.h>
-#include<stdlib.h>
 #include<string.h>
 #include<ctype.h>
 #include"Funcs16.h"
@@ -30,3 +28,4 @@ void printOx(int a){
     }
     printf("0x%X (%d)\n", a1, a);
 }
+

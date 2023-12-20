@@ -1,7 +1,6 @@
 .PHONY: all run mem clean
 
 cc = gcc
-isp = main
 all: main
 
 main: func.o Funcs16.o Funcs2.o Funcs8.o check_base.o main.o
@@ -25,8 +24,8 @@ check_base.o: check_base.c
 run : main 
 	./main
 clean:
-	rm main
-	rm *.o
+	rm *.o main
+	
 
 mem: main
 	valgrind --track-origins=yes ./main

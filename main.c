@@ -38,7 +38,9 @@ void raz(char* vvod){
     i--;
     for(int j = lo;j <= i;j++)
         a[j - lo] = vvod[j];
-    i++;    
+    i++;
+    if(vvod[i] == '~')
+        flag = 1;
     if(op != '~')
         op = vvod[i];
     i++;
@@ -169,4 +171,5 @@ int main(){
     free(a);
     free(b);
     free(vvod);
+    return 0;
 }

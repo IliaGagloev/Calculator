@@ -21,7 +21,7 @@ char* a = NULL;
 char* b = NULL;
 char op;
 
-void raz(char* vvod){
+void razdelenie(char* vvod){
     int i = 0;
     if(vvod[0] == '~'){
         op = '~';
@@ -67,7 +67,7 @@ int main(){
     size_t size = 0;
     getline(&vvod, &size, stdin);
     vvod = delete_spaces(vvod);
-    raz(vvod);
+    razdelenie(vvod);
     if(flag == 1){
         printf("Please, type only one sign\n");
         free(a);
@@ -81,13 +81,13 @@ int main(){
         int a1 = 0;
         switch(base){
             case 2:
-                a1 = bin(a,&zifr);
+                a1 = fromIntToBin(a,&zifr);
                 break;
             case 8:
-                a1 = o(a,&zifr);
+                a1 = fromIntToOctal(a,&zifr);
                 break;
             case 16:
-                a1 = ox(a,&zifr);
+                a1 = fromIntToHex(a,&zifr);
                 break;
         }
         if(zifr == 1){
@@ -105,10 +105,10 @@ int main(){
                 printBin(res);
                 break;
             case 8:
-                printO(res);
+                printOctal(res);
                 break;
             case 16:
-                printOx(res);
+                printHex(res);
                 break;
         }
     }else{
@@ -123,16 +123,16 @@ int main(){
         int a1 = 0, b1 = 0;
         switch(base){
             case 2:
-                a1 = bin(a,&zifr);
-                b1 = bin(b, &zifr);
+                a1 = fromIntToBin(a,&zifr);
+                b1 = fromIntToBin(b, &zifr);
                 break;
             case 8:
-                a1 = o(a,&zifr);
-                b1 = o(b,&zifr);
+                a1 = fromIntToOctal(a,&zifr);
+                b1 = fromIntToOctal(b,&zifr);
                 break;
             case 16:
-                a1 = ox(a,&zifr);
-                b1 = ox(b,&zifr);
+                a1 = fromIntToHex(a,&zifr);
+                b1 = fromIntToHex(b,&zifr);
                 break;
         }
         if(zifr == 1){
@@ -159,10 +159,10 @@ int main(){
                 printBin(res);
                 break;
             case 8:
-                printO(res);
+                printOctal(res);
                 break;
             case 16:
-                printOx(res);
+                printHex(res);
                 break;
         }
     }

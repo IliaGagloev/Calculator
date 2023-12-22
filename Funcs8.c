@@ -5,7 +5,7 @@
 #include"Funcs2.h"
 #include"func.h"
 
-int o(const char *a,int* flag ){
+int fromIntToOctal(const char *a,int* flag ){
     int res = 0;
     for(int i = 1;i < strlen(a);i++){
         if(a[i] - '0' >= 8){
@@ -19,7 +19,7 @@ int o(const char *a,int* flag ){
 }
 
 
-void printO(int a){
+void printOctal(int a){
     if(a < 0){
         printf("-");
         a = abs(a);

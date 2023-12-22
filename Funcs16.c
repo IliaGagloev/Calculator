@@ -1,7 +1,7 @@
 #include<string.h>
 #include<ctype.h>
 #include"Funcs16.h"
-int ox(const char *a,int* flag){
+int fromIntToHex(const char *a,int* flag){
     int res = 0;
     for(int i = 2;i < strlen(a);i++){
         if(isdigit(a[i])){
@@ -20,7 +20,7 @@ int ox(const char *a,int* flag){
 }
 
 
-void printOx(int a){
+void printHex(int a){
     int a1 = a;
     if(a < 0){
         printf("-");

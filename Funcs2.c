@@ -5,7 +5,7 @@
 #include"Funcs2.h"
 #include"func.h"
 
-int bin(const char *a, int* flag){
+int fromIntToBin(const char *a, int* flag){
     int res = 0;
     for(int i = 0;i < strlen(a);i++){
         if(a[i] - '0' > 1){
